@@ -1,3 +1,4 @@
+//we could interact with application via signalls
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -16,6 +17,13 @@ void daemonize(){
 		exit(1);
 	}
 
+	//do it second time to be sure that process is in background mode: thus it cant connect to terminal
+	pid = fork();
+	if( pid > 0){// parent process
+		exit(0);
+	}
+	if( pid == 0){// child process
+	}
 	chdir("/");
 	
 	//sysconf determine application limit of smth
