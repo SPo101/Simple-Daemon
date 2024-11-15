@@ -1,4 +1,4 @@
-# /var/log/syslog
+// /var/log/syslog
 #include <syslog.h>
 
 int main(int argc, char *argv[]){
